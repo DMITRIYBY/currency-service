@@ -64,7 +64,7 @@ func main() {
 
 	// Фетчинг запускается в 01:00 ночи каждые сутки
 	c := cron.New()
-	_, err = c.AddFunc("* * * * *", collectAndSaveRates)
+	_, err = c.AddFunc("0 1 * * *", collectAndSaveRates)
 	if err != nil {
 		log.Fatal("Ошибка добавления cron-задачи:", err)
 	}
